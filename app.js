@@ -37,9 +37,9 @@ app.get('/articles', function(req, res) {
 //GETTING 1 ITEM
 app.get('/article/:articletitle', function(req, res) {
     let result = req.params.articletitle
-    Article.findOne({title: result}, function(err, success) {
-        if (success) {
-            res.send(success)
+    Article.findOne({title: result}, function(err, theResponse) {
+        if (theResponse) {
+            res.send(theResponse)
         } else {
             res.send("no match found")
         }
